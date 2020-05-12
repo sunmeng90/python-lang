@@ -1,4 +1,7 @@
-def chunks(data=None, size=2):
+from typing import Generator, Union, _T, List, Any, Optional
+
+
+def chunks(data: Optional[list], size: int = 2) -> Generator[Union[list, _T, List[_T]], Any, None]:
     """
     split data into chunk of size
     :param data: list
@@ -9,3 +12,7 @@ def chunks(data=None, size=2):
         data = []
     for i in range(0, len(data), size):
         yield data[i:i + size]
+
+
+if __name__ == '__main__':
+    chunks('abc', 'abc')

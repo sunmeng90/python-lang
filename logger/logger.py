@@ -4,7 +4,7 @@ import os.path
 import yaml
 
 
-def init(file='./conf/logger.yaml'):
+def init(file: str = './conf/logger.yaml') -> None:
     print(f'load logger configuration from {file}')
     if not os.path.exists(file):
         file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logger.yaml')
@@ -18,7 +18,7 @@ def init(file='./conf/logger.yaml'):
 init()
 
 
-def get_logger(name):
+def get_logger(name: str):
     return logging.getLogger(name)
 
 
